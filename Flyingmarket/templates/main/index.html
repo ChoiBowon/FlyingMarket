@@ -1,7 +1,56 @@
-{% extends 'layout.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
-{% block content %}
+     <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'flyingmarket.css' %}">
 
-보원이를 사랑해요!!! 여긴메인이에요!!
+    <title>FlyingMarket</title>
+</head>
+<body class="main">
+    <div class="wrapper">
+        <div class="header">
+            <div class="inner">
+                <ul class="manu_list">
+                    <li class="item">
+                        <a href="#" class="menu_link">여행가게</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="menu_link">쇼핑하게</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="menu_link">소개</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="container">
+                <div class="main_flick_area swiper-container swiper-container-horizontal">
+                    <div class="swiper-wrapper">
 
-{% endblock %}
+                    </div>
+                </div>
+                <div class="flick_element">
+                    <div class="text_area">
+                        <strong class="main_text _main_copy">
+                            "Flying Market"
+                        </strong>
+                        <a href="#" class="main_btn">옆으로 넘겨주세요</a>
+                    </div>
+                    <a href="#" class="arrow prev"></a>
+                    <a href="#" class="arrow next"></a>
+d
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
