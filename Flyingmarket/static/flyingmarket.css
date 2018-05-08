@@ -1,241 +1,117 @@
-@charset "UTF-8";
+      * {
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
 
-body,
-button,
-dd,
-dl,
-dt,
-fieldset,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-input,
-legend,
-li,
-ol,
-p,
-select,
-table,
-td,
-textarea,
-th,
-ul {
-	margin: 0;
-	padding: 0;
-}
+      a:link, a:hover, a:visited {
+        color:#fff;
+        text-decoration:none;
+        text-shadow:1px 1px 0 #283744;
+      }
+      nav {
+        width:100%;
+        height:auto;
+        background:#34495e;
+        font-size:1.2em;
+        font-weight:bold;
+        position:relative;
+      }
+      nav ul {
+        display: none;
+        height: auto;
+      }
+      nav ul li {
+        display: block;
+        width: 100%;
+        text-align:center;
+        border-bottom: 1px solid #576979;
+      }
+      nav ul li a {
+        line-height:50px;
+      }
+      nav a#trigger {
+        display:block;
+        background-color:#283744;
+        width:100%;
+        padding-left:15px;
+        line-height:40px;
+        position:relative;
+      }
+      nav a#trigger::after {
+        content: "";
+        background: url("nav.png") no-repeat;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+      }
 
-html {
-	font-family: "NanumSquare", 나눔스퀘어, Nanum Barun Gothic, 나눔바른고딕, "Nanum Barun Gothic", "NanumGothic", "나눔고딕", "Apple SD Gothic Neo", Dotum, "돋움", sans-serif;
-}
 
-html,
-body {
-	height: 100%;
-}
 
-body {
-	position: relative;
-}
+      @media screen and (min-width:721px) {
+        nav {
+            height:40px;
+            border-bottom:2px solid #34495e;
+        }
+        nav ul {
+        display:block;
+        width:720px;
+        height:40px;
+        padding:0;
+        margin:0 auto;
+        }
+        nav ul li {
+            display:inline-block;
+            width:120px;
+            border-bottom:0;
+            border-right:1px solid #576979;
+            margin-right:-6px;
+        }
+        nav ul li:last-child {
+            border-right:0;
+        }
+        nav ul li a {
+            font-size:1em;
+            line-height:40px;
+        }
+        nav a#trigger{
+            display:none;
+        }
+      }
 
-address,
-em {
-	font-style: normal;
-}
 
-fieldset,
-img {
-	border: 0 none;
-}
+      section {
+        position:relative;
+        width:100%
+        margin:0 auto;
+        padding:20px;
+        height:800px;
+        border:1px solid black;
+      }
+      section h2 {
+        font-size:4em;
+        color:white;
+        text-shadow:1px 2px 1px black;
+        line-height:600px;
+        text-align:center;
+        text-transform:uppercase;
+      }
+      .page1{
+        background:url("page1.jpg") no-repeat center;
+        background-size:cover;
+      }
+      .page2{
+        background:url("page2.jpg") no-repeat center;
+        background-size:cover;
+      }
+      .page3{
+        background:url("page2.ipg") no-repeat center;
+        background-size:cover;
+      }
 
-img {
-	vertical-align: top;
-}
 
-dl,
-ol,
-ul {
-	list-style: none;
-}
-
-a {
-	color: inherit;
-	text-decoration: none;
-	cursor: pointer;
-}
-
-a:hover {
-	cursor: pointer;
-}
-
-button {
-	border: none;
-	background: none;
-	cursor: pointer;
-}
-
-.blind {
-	overflow: hidden;
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	clip: rect(0, 0, 0, 0);
-}
-.wrapper {
-	min-width: 1280px;
-	min-height: 100%;
-	height: 0;
-}
-
-.wrap {
-	min-height: 100%;
-	margin-top: -170px;
-	text-align: center;
-}
-
-.container {
-	padding-top: 170px;
-	height: 100%;
-	margin: 0 auto;
-}
-
-.header {
-	position: relative;
-	height: 90px;
-	background-color: rgba(0, 0, 0, 0.15);
-	z-index: 100;
-	font-weight: 300;
-}
-.header .inner {
-	position: relative;
-	width: 1060px;
-	height: 100%;
-	margin: 0 auto;
-	z-index: 10;
-}
-.header .menu_list {
-	height: 100%;
-	font-size: 0;
-	text-align: center;
-}
-.header .menu_list .menu_link {
-	display: block;
-	height: 90px;
-	padding: 0 30px;
-	color: #bfbfbf;
-	font-size: 18px;
-	line-height: 90px;
-	letter-spacing: -0.25px;
-}
-body {
-	background: #f3f4f8;
-}
-.main {
-	min-height: 1280px;
-	background: #0b0b0d;
-}
-
-.main .wrap {
-	overflow: hidden;
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	min-width: 1280px;
-	min-height: 1280px;
-	margin: 0;
-}
-
-.main .container {
-	padding: 0;
-}
-
-.main_flick_area {
-	overflow: hidden;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
-
-.main_flick_area .flick_item {
-	overflow: hidden;
-}
-
-.flick_element {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 10;
-}
-
-.flick_element .txt_area {
-	position: absolute;
-	top: 50%;
-	right: 0;
-	left: 0;
-	margin-top: -90px;
-	font-weight: 300;
-}
-
-.flick_element .txt_area .main_txt {
-	display: block;
-	font-size: 40px;
-	line-height: 59px;
-	letter-spacing: -0.8px;
-	color: #fff;
-	font-weight: 100;
-}
-
-.flick_element .txt_area .main_txt .eng {
-	font-size: 44px;
-	font-weight: 100;
-	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-	letter-spacing: 0.8px;
-	vertical-align: -3px;
-}
-
-.flick_element .txt_area .main_btn {
-	display: inline-block;
-	width: 196px;
-	height: 56px;
-	margin-top: 30px;
-	font-size: 18px;
-	font-weight: bold;
-	line-height: 56px;
-	letter-spacing: 0.4px;
-	border: 1px solid rgba(255, 255, 255, 0.4);
-	border-radius: 5px;
-	color: #fff;
-	background: transparent;
-	box-sizing: border-box;
-}
-
-.flick_element .txt_area .main_btn:hover {
-	border-color: #05d685;
-	background: #05d685;
-	transition: all 0.3s ease;
-}
-
-.flick_element .arrow {
-	position: absolute;
-	top: 50%;
-	margin-top: -33px;
-	padding: 10px;
-}
-
-.flick_element .arrow.prev {
-	left: 20px;
-}
-
-.flick_element .arrow.next {
-	right: 20px;
-}

@@ -1,56 +1,59 @@
-{% load static %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-     <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'flyingmarket.css' %}">
-
     <title>FlyingMarket</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'flyingmarket.css' %}">
+
 </head>
-<body class="main">
-    <div class="wrapper">
-        <div class="header">
-            <div class="inner">
-                <ul class="manu_list">
-                    <li class="item">
-                        <a href="#" class="menu_link">여행가게</a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="menu_link">쇼핑하게</a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="menu_link">소개</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="wrap">
-            <div class="container">
-                <div class="main_flick_area swiper-container swiper-container-horizontal">
-                    <div class="swiper-wrapper">
 
-                    </div>
-                </div>
-                <div class="flick_element">
-                    <div class="text_area">
-                        <strong class="main_text _main_copy">
-                            "Flying Market"
-                        </strong>
-                        <a href="#" class="main_btn">옆으로 넘겨주세요</a>
-                    </div>
-                    <a href="#" class="arrow prev"></a>
-                    <a href="#" class="arrow next"></a>
-d
-                </div>
+<section id="1" class="page1">
+    <h2>새로운 해외쇼핑</h2>
+    <h2>Flying Market</h2>
+</section>
+<section id="2" class="page2">
+    <h2>해외쇼핑 Bestseller</h2>
+</section>
+<section id="3" class="page3">
+    <h2>여행자와 소비자가 윈윈하는 쇼핑플랫폼!</h2>
+</section>
 
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">WEB</a></li>
+            <li><a href="#">DESIGN</a></li>
+            <li><a href="#">MAP</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+        <a href="#" id="trigger">MENU</a>
+    </nav>
 
-            </div>
-        </div>
-    </div>
-
+  <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+	<script>
+		$(function () {
+			var trigger = $('#trigger');
+			var menu = $('nav ul');
+			$(trigger).on('click', function (e) {
+				e.preventDefault();
+				menu.slideToggle();
+			});
+			$(window).resize(function () {
+				var w = $(window).width();
+				if (w > 320 && menu.is(':hidden')) {
+					menu.removeAttr('style');
+				}
+			});
+		});
+	</script>
 </body>
 </html>
