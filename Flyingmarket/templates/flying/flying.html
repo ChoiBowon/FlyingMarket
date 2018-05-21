@@ -2,6 +2,15 @@
 
 {% block content %}
 
-보원이를 사랑해요!!! 여행자 페이지에요!!
+<h1>This is Flying Page !!! </h1>
+<h3>Hope you can have a good time.</h3>
+
+{% if flying_list %}
+    {% for Flying in flying_list %}
+                <li>{{ Flying.title }}</li>
+    {% endfor %}
+{% else %}
+    <h4>There is no Flying List!!</h4>
+{% endif %}
 
 {% endblock %}

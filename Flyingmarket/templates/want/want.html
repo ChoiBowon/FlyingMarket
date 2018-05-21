@@ -2,6 +2,15 @@
 
 {% block content %}
 
-보원이를 사랑해요!!! 구매자 페이지에요!!
+<h1>This is Want Page !!! </h1>
+<h3>Hope you can have a good time.</h3>
+
+{% if want_list %}
+    {% for Want in want_list %}
+                <li>{{ Want.title }}</li>
+    {% endfor %}
+{% else %}
+    <h4>There is no Want List!!</h4>
+{% endif %}
 
 {% endblock %}
