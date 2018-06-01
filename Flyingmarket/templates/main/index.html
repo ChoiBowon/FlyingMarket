@@ -44,7 +44,6 @@
       text-decoration: none;
     }
 
-
     h1, h2 {
       width: 100%;
       float: left;
@@ -74,7 +73,7 @@
       color: #6D461D;
       font-weight: 100;
       margin-top: 0;
-      margin-bottom: 10px;
+      margin-bottom: 0px;
     }
 
     .pointer {
@@ -235,7 +234,7 @@
     }
     .main section .page_container {
       position: relative;
-      top: 15%;
+      top: 11%;
       margin: 0 auto 0;
       max-width: 950px;
       z-index: 3;
@@ -262,6 +261,7 @@
       text-align:center;
       text-transform:uppercase;
       padding: 0;
+      margin-top:0px;
       margin-bottom: 15px;
       font-size: 70px;
     }
@@ -298,21 +298,46 @@
       text-align: center;
       padding: 0;
       margin-top:0px;
-      margin-bottom: 15px;
       font-size: 70px;
       letter-spacing: -1px;
       color: black;
     }
     .main section.page2 h2 {
-      color: rgba(255,255,255,0.85);
+      color: black;
       text-align: center;
       line-height: 160%;
       font-weight: 100;
     }
+
+    .main section.page2 .cart {
+      transform:translate3d(1346px, 19px, 0px);
+    }
+
+    .main section.page2 .flex_container {
+       padding:10px;
+       display:flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+       /* flex-flow: row wrap;*/
+       justify-content:center;
+       background-color:#FFF;
+       <!--border: rgba(0,0,0,0.05) 5px solid;-->
+       border:#FFF;
+       border-radius: 4px;
+    }
+
+    .main section.page2 .flex_btns {
+       margin:10px;
+       margin-top:15px;
+       background-color:#fff;
+       border-radius: 6px;
+    }
+
     .viewing-page-2 .back{
       background: rgba(0, 0, 0, 0.25);
       color: #FFF;
       }
+
     .main section.page3 {
       background:url("static/tilted-phone.png") no-repeat 156px -150px ;
     }
@@ -432,7 +457,14 @@
             <h3><a href="http://www.google.com"><img src="static/logo.jpg"></a></h3>
             <ul class="main-nav">
                 <!--<li><a href="#ms1" class="scroll">Link 1</a></li>-->
-                <li><a href="#ms2">Login</a></li>
+                <!--<li><a href="#ms2">Login</a></li>-->
+                {% if user.is_active %}
+                <li>Welcome, {{user.username}}</li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+                <li><a href="#ms2">SignUp</a></li>
                 <li><a href="#ms3">Company</a></li>
             </ul>
         </nav>
@@ -454,12 +486,25 @@
                 <div class="page_container">
                     <h1>해외 쇼핑 Bestseller</h1>
                     <h2>이거 하나도 이렇게 어렵다니하하하하하하ㅏㅎ</h2>
-                    <code class="html">
-                        ㅇㄹㅇㄹㄹ
-                    </code>
-                    <code class="js">
-                        여기도 바꾸기
-                    </code>
+                    <div class="flex_container">
+                        <div class="flex_btns"><a href="http://www.naver.com"><img src="static/eee.jpeg"/></a></div>
+                        <div class="flex_btns"><a href="http://www.naver.com"><img src="static/ddd.jpeg"/></a></div>
+                        <div class="flex_btns"><a href="http://www.naver.com"><img src="static/fff.jpeg"/></a></div>
+                    </div>
+                    <div class="flex_container">
+                        <div class="flex_btns"><a href="http://www.naver.com"><img src="static/bbb.jpeg"/></a></div>
+                        <div class="flex_btns"><a href="http://www.naver.com"><img src="static/sss.jpeg"/></a></div>
+                        <div class="flex_btns"><a href="http://www.naver.com"><img src="static/aaa.jpeg"/></a></div>
+                    </div>
+                    <div class="cart">
+                        <img src="static/cart.png"/>
+                    </div>
+                    <!--<code class="html">-->
+                        <!--ㅇㄹㅇㄹㄹ-->
+                    <!--</code>-->
+                    <!--<code class="js">-->
+                        <!--여기도 바꾸기-->
+                    <!--</code>-->
                 </div>
             </section>
             <section class="page3">
