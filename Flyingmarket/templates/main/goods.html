@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1>This is Goods Page !!! </h1>
+<h3>Hope you can have a good time.</h3>
+
+{% if goods_list %}
+    {% for Goods in goods_list %}
+        <li><a href="{% url 'main:goods_detail' Goods.id %}">{{ Goods }}</a></li>
+    {% endfor %}
+{% else %}
+    <h4>There is no Goods List!!</h4>
+{% endif %}
+
+{% endblock %}

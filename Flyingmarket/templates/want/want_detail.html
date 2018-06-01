@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1>This is Want Detail Page !!! </h1>
+<h3>You can see detail of want information.</h3>
+
+
+<li>{{ Want.title }}  created on {{ Want.created }}</li>
+<li>{{ Want.country_id }}</li>
+<li>{{ Want.content }}</li>
+<br>
+<a href="{% url 'want:want' %}">목록</a>
+
+{% endblock %}

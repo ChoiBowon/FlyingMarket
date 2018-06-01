@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1>This is Goods Detail Page !!! </h1>
+<h3>You can see detail of goods information.</h3>
+
+
+<li>{{ Goods.id }}</li>
+<li>{{ Goods.name }}</li>
+<br>
+<a href="{% url 'main:goods' %}">목록</a>
+
+{% endblock %}

@@ -7,7 +7,7 @@
 
 {% if flying_list %}
     {% for Flying in flying_list %}
-                <li>{{ Flying.title }}</li>
+                <li><a href="{% url 'flying:flying_detail' Flying.id %}">{{ Flying.title }}</a></li>
     {% endfor %}
 {% else %}
     <h4>There is no Flying List!!</h4>

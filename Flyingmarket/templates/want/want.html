@@ -7,7 +7,7 @@
 
 {% if want_list %}
     {% for Want in want_list %}
-                <li>{{ Want.title }}</li>
+       <li><a href="{% url 'want:want_detail' Want.id %}">{{ Want.title }}</a></li>
     {% endfor %}
 {% else %}
     <h4>There is no Want List!!</h4>
