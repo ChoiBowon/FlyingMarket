@@ -7,9 +7,9 @@
 
 
 <li>{{ Flying.title }}  created on {{ Flying.created }}</li>
-<li>{{ Flying.country_id }}</li>
+<li>{{ Country.name }}</li>
 <li>{{ Flying.content }}</li>
 <br>
-<a href="{% url 'flying:flying' %}">목록</a>
+<a class="btn" href="{% url 'flying:flying' %}">목록</a>
 
 {% endblock %}

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Flying(models.Model):
@@ -8,7 +9,7 @@ class Flying(models.Model):
     created = models.DateField(auto_now=True)
     start_date = models.DateField()
     end_date = models.DateField()
-    user_id = models.IntegerField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     is_matched = models.BooleanField(default=False)
 
     def __str__(self):

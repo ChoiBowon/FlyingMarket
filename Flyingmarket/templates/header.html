@@ -1,7 +1,18 @@
-</br>
-    <li><a href="{% url 'flying:flying' %}">Flying</a></li>
-    <li><a href="{% url 'want:want' %}">Want</a></li>
-    <li><a href="{% url 'main:goods' %}">Goods</a></li>
-    <li><a href="{% url 'main:home' %}">Home</a></li>
-</br>
-</br>
+{% load static %}
+<nav id="navi">
+    <h3><a href="{% url 'main:home' %}"><img src="{% static 'logo.jpg' %}"></a></h3>
+    <ul class="main-nav">
+        <!--<li><a href="#ms1" class="scroll">Link 1</a></li>-->
+        <!--<li><a href="#ms2">Login</a></li>-->
+        {% if user.is_active %}
+        <li>Welcome, {{user.username}}</li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+        <li><a href="{% url 'flying:flying' %}">Flying</a></li>
+        <li><a href="{% url 'want:want' %}">Want</a></li>
+        <li><a href="{% url 'main:goods' %}">Goods</a></li>
+    </ul>
+</nav>
+
