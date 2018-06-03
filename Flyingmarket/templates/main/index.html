@@ -485,12 +485,12 @@
                                     <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
                             </div>
                             <div class="modal-body">
-                                <form action="main/signup/" method="POST">
+                                <form action="{% url 'signup' %}" method="POST">
                                     {% csrf_token %}
                                     <input type="hidden" name="next" value="{{ next }}">
                                     <label>
                                         <span class="text-hidden">ID(Email)</span>
-                                        <input name="email" type="text" placeholder="Email">
+                                        <input name="username" type="text" placeholder="Email">
                                     </label><br>
                                     <label>
                                         <span class="text-hidden">Password</span>
